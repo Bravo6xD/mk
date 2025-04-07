@@ -1,0 +1,30 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Введення даних</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="stacked">Тип глядача</ion-label>
+        <ion-select formControlName="type">
+          <ion-select-option value="regular">Постійний</ion-select-option>
+          <ion-select-option value="student">Студент</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Кількість відвідувань</ion-label>
+        <ion-input type="number" formControlName="visits"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Ціна квитка</ion-label>
+        <ion-input type="number" formControlName="price"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" type="submit" [disabled]="form.invalid">
+        Розрахувати
+      </ion-button>
+    </form>
+  </ion-card-content>
+</ion-card>

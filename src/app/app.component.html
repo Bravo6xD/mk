@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Кінотеатр: розрахунок знижок</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <app-viewer-form (viewerData)="onViewerData($event)"></app-viewer-form>
+
+  <ion-card *ngIf="viewer && finalPrice !== null">
+    <ion-card-header>
+      <ion-card-title>Результат</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Кількість відвідувань: {{ viewer.visits }}</p>
+      <p>Фінальна вартість квитка: {{ finalPrice | currency: 'UAH':'symbol' }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
